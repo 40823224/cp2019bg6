@@ -21,10 +21,10 @@ void main() {
 void drawUSA(ctx){
   // 紅色
   ctx.clearRect(0, 0, flag_w, flag_h);
-  ctx.fillStyle = 'rgb(255,0,0)';
+  ctx.fillStyle = 'rgb(200,0,0)';
   ctx.fillRect(0, 0, flag_w, flag_h);
   //藍色
-  ctx.fillStyle='rgb(0,0,150)';
+  ctx.fillStyle='rgb(0,0,100)';
   ctx.fillRect(0, 0, flag_w/2, flag_h/1.857);
   //白色
   ctx.fillStyle='rgb(255,255,255)';
