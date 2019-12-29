@@ -4,7 +4,8 @@ import 'dart:html';
   int num;
   InputElement studListUrl = querySelector("#studListUrl");
   String studUrl;
-  LabelElement output = querySelector("#output");
+  // 將 Label 改為 Textarea, 避免產生過程結果嵌入所在頁面
+  TextAreaElement output = querySelector("#output");
 
 main() {
   querySelector("#submit").onClick.listen((e) => Grouping());
@@ -44,14 +45,14 @@ Grouping() {
       if (i % num == 0) {
         gpList = [];
         // 列印區隔符號
-        output.innerHtml += '=' * 20 + "<br />";
-        output.innerHtml += "group $gth :" + "<br />";
-        output.innerHtml += studList[i] + "<br />";
+        output.text += '=' * 20 + "\n";
+        output.text += "group $gth :" + "\n";
+        output.text += studList[i] + "\n";
         // 在各分組數列中加入將對應的學員學號
         gpList.add(studList[i]);
         gth = gth + 1;
       } else {
-        output.innerHtml += studList[i] + "<br />";
+        output.text += studList[i] + "\n";
         // 在各分組數列中加入將對應的學員學號
         gpList.add(studList[i]);
       }
@@ -61,6 +62,6 @@ Grouping() {
       }
     }
     // 列出全班分組數列
-    output.innerHtml += cp2019.toString() + "<br />";
+    output.text += cp2019.toString() + "\n";
   });
 }
